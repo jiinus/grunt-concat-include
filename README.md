@@ -1,4 +1,4 @@
-# grunt-contrib-concat
+# grunt-concat-include
 
 > Concatenate files using an include file.
 
