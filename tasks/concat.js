@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 		var options = this.options({
 			banner: '',
 			footer: '',
-			separator: ';'
+			separator: grunt.util.linefeed
 		});
 
 		// ++++++++++++++++++++++++++++++
@@ -73,9 +73,9 @@ module.exports = function(grunt) {
 
 						return grunt.file.read(file);
 
-					});
+					}).join(options.separator);
 
-				});
+				}).join(options.separator);
 
 			}).join(options.separator);
 
