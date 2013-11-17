@@ -87,7 +87,7 @@ grunt.initConfig({
   pkg: grunt.file.readJSON('package.json'),
   concatinclude: {
     options: {
-      banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */
+      banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */'
     },
     dist: {
       files: {
@@ -112,7 +112,7 @@ grunt.initConfig({
   pkg: grunt.file.readJSON('package.json'),
   concatinclude: {
     options: {
-      footer: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */
+      footer: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */'
     },
     dist: {
       files: {
