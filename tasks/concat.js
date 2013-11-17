@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 
 					return files.map(function(file) {
 
-						return grunt.file.read(file);
+						return (grunt.file.isFile(file)) ? grunt.file.read(file) : null;
 
 					}).join(options.separator);
 
