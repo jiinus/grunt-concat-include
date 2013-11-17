@@ -66,7 +66,7 @@ grunt.initConfig({
     },
     dist: {
       files: {
-      	'dist/built.js': ['src/include.inc]
+      	'dist/built.js': ['src/include.inc']
       }
     }
   }
@@ -91,7 +91,7 @@ grunt.initConfig({
     },
     dist: {
       files: {
-      	'dist/built.js': ['src/include.inc]
+      	'dist/built.js': ['src/include.inc']
       }
     }
   }
@@ -116,7 +116,7 @@ grunt.initConfig({
     },
     dist: {
       files: {
-      	'dist/built.js': ['src/include.inc]
+      	'dist/built.js': ['src/include.inc']
       }
     }
   }
