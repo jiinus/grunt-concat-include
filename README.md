@@ -162,13 +162,8 @@ Include all files in a directory and all sub-directories: `@require external/**`
 
 ## Release History
 
+ * 2014-08-26   v0.2.2   Don't quote filenames to stdout.
  * 2013-11-17   v0.2.1   Update documentation.
  * 2013-11-17   v0.2.0   Disable concatenation for directories and update documentation.
  * 2013-09-29   v0.1.1   Update default concatenation character.
  * 2013-09-29   v0.1.0   Initial commit.
-
----
-
-Task submitted by [Tobie Morgan Hitchcock](http://abcum.com/)
-
-*This file was generated on Sun Nov 17 2013 13:40:52.*
