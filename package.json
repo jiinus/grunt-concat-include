@@ -1,7 +1,7 @@
 {
   "name": "grunt-concat-include",
   "description": "Concatenate files using an include file.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/abcum/grunt-concat-include",
   "author": {
     "name": "Abcum Ltd",

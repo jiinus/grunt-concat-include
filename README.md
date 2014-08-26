@@ -162,6 +162,7 @@ Include all files in a directory and all sub-directories: `@require external/**`
 
 ## Release History
 
+ * 2014-08-26   v0.2.3   Colour filenames in stdout.
  * 2014-08-26   v0.2.2   Don't quote filenames to stdout.
  * 2013-11-17   v0.2.1   Update documentation.
  * 2013-11-17   v0.2.0   Disable concatenation for directories and update documentation.
