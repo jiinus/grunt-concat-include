@@ -8,18 +8,20 @@
 
 'use strict';
 
-var chalk = require('chalk');
-
 module.exports = function(grunt) {
 
 	var path = require('path');
+	var chalk = require('chalk');
 
 	grunt.registerMultiTask('concatinclude', 'Concatenate files.', function() {
 
 		var options = this.options({
 			banner: '',
 			footer: '',
-			separator: grunt.util.linefeed
+			separator: grunt.util.linefeed,
+			processIncludeContents: function(fileData, filePath) {
+				return fileData;
+			}
 		});
 
 		// ++++++++++++++++++++++++++++++
@@ -34,6 +36,7 @@ module.exports = function(grunt) {
 		// ++++++++++++++++++++++++++++++
 
 		this.files.forEach(function(f) {
+			var missing = [];
 
 			var src = f.src.map(function(filepath) {
 
@@ -70,10 +73,15 @@ module.exports = function(grunt) {
 				return matches.map(function(match) {
 
 					var files = grunt.file.expand(match);
-
+					
+					if (files.length === 0) {
+						missing.push(match);
+					}
+					
 					return files.map(function(file) {
 
-						return (grunt.file.isFile(file)) ? grunt.file.read(file) : null;
+						var fileContent = (grunt.file.isFile(file)) ? grunt.file.read(file) : null;
+						return options.processIncludeContents(fileContent, file);
 
 					}).join(options.separator);
 
@@ -83,6 +91,11 @@ module.exports = function(grunt) {
 
 			// Write the destination file.
 			grunt.file.write(f.dest, banner + src + footer);
+			
+			// List missing files
+			missing.map(function(file) {
+				grunt.log.writeln('File "' + chalk.red(file) + '" was not found!');
+			});
 
 			// Print a success message.
 			grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created.');
