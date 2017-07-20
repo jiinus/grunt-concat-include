@@ -60,6 +60,9 @@ module.exports = function(grunt) {
 
 					match = match[1];
 
+					// Strip double/single quotes from beginning/end of the string
+					match = match.replace(/^"|^'|"$|'$/g, '');
+
 					match = wdir + match;
 
 					matches.push(match);
